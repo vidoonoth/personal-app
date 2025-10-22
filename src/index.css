@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer components {
+
+  .bg-primary {
+    @apply bg-blue-950;
+  }
+
+  .bg-secondary {
+    @apply bg-blue-900;
+  }
+
+
+  .btn-primary {
+    @apply bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-white hover:text-blue-700 transition;
+  }  
+
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300;
+  }
+
+  .btn-outline {
+    @apply border border-white text-white font-semibold py-2 px-4 rounded-lg hover:bg-white hover:text-black transition;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+ 
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: white;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  /* a:hover {
+    color: #747bff;
+  } */
+  button {
+    background-color: #f9f9f9;
+  }
+}
