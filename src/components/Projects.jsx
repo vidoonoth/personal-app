@@ -20,9 +20,9 @@ const Projects = () => {
      
     },
     {
-      title: 'Fashion Store',
-      description: 'A modern and stylish online fashion store that offers a wide range of clothing, accessories, and footwear for men and women.',
-      image: '/project3.jpg',
+      title: 'Votise',
+      description: 'A modern and stylish online shoes store.',
+      image: '/votise.png',
       liveUrl: 'https://project3.com',
       githubUrl: 'https://github.com/username/project3',
      

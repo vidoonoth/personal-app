@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @layer components {
-
   .bg-primary {
     @apply bg-blue-950;
   }
@@ -10,11 +9,9 @@
     @apply bg-blue-900;
   }
 
-
   .btn-primary {
     @apply bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-white hover:text-blue-700 transition;
-  }  
-
+  }
 
   .btn-secondary {
     @apply bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300;
@@ -33,7 +30,18 @@ html {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
- 
+}
+
+html::-webkit-scrollbar {
+  width: 30px;
+}
+html::-webkit-scrollbar-track {
+  background: #172554;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1;
+  border-radius: 6px;
+  border: 3px solid #1c2f6f;
 }
 
 body {
@@ -51,7 +59,6 @@ a {
 a:hover {
   color: #535bf2;
 }
-
 
 h1 {
   font-size: 3.2em;
