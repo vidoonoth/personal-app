@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+@layer components {
+  .bg-primary {
+    @apply bg-blue-950;
+  }
+
+  .bg-secondary {
+    @apply bg-blue-900;
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
