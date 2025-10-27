@@ -4,7 +4,7 @@ import { User } from "lucide-react";
 const About = () => {
   return (
     <section id="about" className="section-padding bg-secondary">
-      <div className="container px-16 py-12">
+      <div className="container px-16 py-12 mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

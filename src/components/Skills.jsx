@@ -37,8 +37,8 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="section-padding">
-      <div className="container px-16 py-12 bg-primary">
+    <section id="skills" className="section-padding bg-primary">
+      <div className="container mx-auto px-4 py-12 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -62,9 +62,9 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="section-paddingbg-linear-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900"
+      className="section-padding bg-secondary"
     >
-      <div className="container px-16 py-12 bg-secondary">
+      <div className="container mx-auto px-4 py-12 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

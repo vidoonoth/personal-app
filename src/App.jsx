@@ -9,7 +9,7 @@ import Certificate from "./components/certificate";
 
 function App() {
   return (
-    <div className="antialiased min-h-screen transition-colors duration-300 dark:bg-gray-900">
+    <div className="antialiased min-h-screen">
       <Navbar />
       <Hero />
       <About />

@@ -68,8 +68,8 @@ const Certificate = () => {
   };
 
   return (
-    <section id="certificates" className="section-padding">
-      <div className="container px-16 py-12 bg-primary">
+    <section id="certificates" className="section-padding bg-primary">
+      <div className="container mx-auto px-4 py-12 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Certificates

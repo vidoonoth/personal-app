@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     // Mempertahankan padding samping dan latar belakang
-    <section className="min-h-screen flex items-center px-16 py-12 bg-primary">
+    <section className="min-h-screen mt-3 flex items-center px-16 py-12 bg-primary">
       {/* Menggunakan container untuk lebar maksimum yang terpusat */}
       <div className="container mx-auto"> 
         <motion.div

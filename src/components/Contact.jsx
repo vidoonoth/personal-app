@@ -24,8 +24,8 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding">
-      <div className="container px-16 py-12 bg-secondary">
+    <section id="contact" className="section-padding bg-secondary">
+      <div className="container mx-auto px-4 py-12 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

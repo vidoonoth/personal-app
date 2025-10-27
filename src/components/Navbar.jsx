@@ -43,7 +43,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <motion.a
             href="#"
-            className="text-xl hover:cursor-pointer font-bold text-blue-600 dark:text-blue-400"
+            className="text-xl hover:cursor-pointer font-bold text-blue-600"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -57,7 +57,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-slate-50 hover:cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                className="text-slate-50 hover:cursor-pointer hover:text-blue-600 transition-colors duration-300"
               >
                 {item.name}
               </a>
@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-50 hover:cursor-pointer hover:text-blue-600 transition-colors duration-300"
+              className="text-white hover:cursor-pointer hover:text-blue-600 rounded-xs transition-colors duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -88,7 +88,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-salte-50 hover:text-blue-600 transition-colors duration-300"
+                  className="block px-3 py-2 text-slate-50 hover:text-blue-600 transition-colors duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
