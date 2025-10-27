@@ -39,7 +39,7 @@ const Hero = () => {
             </div> 
             
             {/* KOLOM KANAN: Gambar */}
-            <div className="flex justify-center lg:justify-end lg:order-2 mt-8 lg:mt-0">                
+            <div className="hidden lg:flex justify-center lg:justify-end lg:order-2 mt-8 lg:mt-0">
                 <img
                     src="/alfin.png"
                     alt="Foto Alfin—profil"
