@@ -9,7 +9,7 @@ import Certificate from "./components/certificate";
 
 function App() {
   return (
-    <div className="antialiased min-h-screen">
+    <div className="antialiased min-h-screen bg-primary">
       <Navbar />
       <Hero />
       <About />
