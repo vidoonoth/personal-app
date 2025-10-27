@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { User } from 'lucide-react';
+import { motion } from "framer-motion";
+import { User } from "lucide-react";
 
 const About = () => {
   return (
@@ -12,21 +12,18 @@ const About = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <div className="inline-block p-3 bg-blue-100 rounded-lg mb-6">
+          {/* <div className="inline-block p-3 bg-blue-100 rounded-lg mb-6">
             <User size={24} className="text-blue-600" />
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             About Me
           </h2>
           <p className="text-lg text-white mb-8">
-            Hi! I'm Muhammad Alfin Tsabit, a passionate web developer with a keen eye for detail
-            and a love for creating seamless user experiences. I specialize in modern web
-            technologies and enjoy turning complex problems into simple, beautiful solutions.
-          </p>
-          <p className="text-lg text-white">
-            With a strong foundation in web development and a continuous learning mindset,
-            I strive to stay up-to-date with the latest technologies and best practices.
-            I'm always excited to take on new challenges and collaborate on innovative projects.
+            Hi! I'm Muhammad Alfin Tsabit, a Polytechnic student majoring in
+            Informatics Engineering, pursuing a Diploma in Informatics
+            Engineering. I have a strong interest in web development,
+            particularly in building Laravel-based applications as a Fullstack
+            Developer.
           </p>
         </motion.div>
       </div>

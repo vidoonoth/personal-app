@@ -6,19 +6,14 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/vidoonoth',
       icon: Github,
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/yourusername',
+      url: 'https://www.linkedin.com/in/muhammad-alfin-tsabit/',
       icon: Linkedin,
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/yourusername',
-      icon: Twitter,
-    },
+    },   
   ];
 
   return (

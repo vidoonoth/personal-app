@@ -1,36 +1,69 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { useState } from "react"; // Import useState
+import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
+  const [visibleProjects, setVisibleProjects] = useState(3); // Initially show 3 projects
+
+  const showMoreProjects = () => {
+    setVisibleProjects((prevCount) => prevCount + 3); // Show 3 more projects
+  };
+
   const projects = [
     {
-      title: 'Book Title Proposal',
-      description: 'Proposal for a New Book Title at the Indramayu Library',
-      image: '/project1.jpg',
-      liveUrl: 'https://project1.com',
-      githubUrl: 'https://github.com/username/project1',
-      tags: ['React', 'Node.js', 'MongoDB'],
+      title: "Book Title Proposal",
+      description: "Proposal for a New Book Title at the Indramayu Library",
+      image: "/project1.jpg",
+      liveUrl: "https://project1.com",
+      githubUrl: "https://github.com/username/project1",
+      tags: ["React", "Node.js", "MongoDB"],
     },
     {
-      title: 'Wedding Invitation Card',
-      description: 'A beautifully designed wedding invitation card used to invite guests to a marriage ceremony.',
-      image: '/project2.jpg',
-      liveUrl: 'https://project2.com',
-      githubUrl: 'https://github.com/username/project2',
-     
+      title: "Wedding Invitation Card",
+      description:
+        "A beautifully designed wedding invitation card used to invite guests to a marriage ceremony.",
+      image: "/project2.jpg",
+      liveUrl: "https://project2.com",
+      githubUrl: "https://github.com/username/project2",
     },
     {
-      title: 'Votise',
-      description: 'A modern and stylish online shoes store.',
-      image: '/votise.png',
-      liveUrl: 'https://project3.com',
-      githubUrl: 'https://github.com/username/project3',
-     
+      title: "Votise",
+      description:
+        "The largest selection of branded footwear. We curate the hottest releases and classic styles from all the major names you trust. Find your next pair here.",
+      image: "/votise.png",
+      liveUrl: "https://project3.com",
+      githubUrl: "https://github.com/vidoonoth/personal-app",
+    },
+    {
+      title: "E-commerce Store",
+      description: "An online store built with modern web technologies.",
+      image: "/ecommerce.png",
+      liveUrl: "https://ecommerce.com",
+      githubUrl: "https://github.com/username/ecommerce",
+    },
+    {
+      title: "Portfolio Website",
+      description:
+        "A personal portfolio website to showcase projects and skills.",
+      image: "/portfolio.png",
+      liveUrl: "https://portfolio.com",
+      githubUrl: "https://github.com/username/portfolio",
+    },
+    {
+      title: "Task Management App",
+      description:
+        "A simple task management application for daily productivity.",
+      image: "/task-app.png",
+      liveUrl: "https://task-app.com",
+      githubUrl: "https://github.com/username/task-app",
     },
   ];
 
   return (
-    <section id="projects" className="section-paddingbg-linear-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
+    <section
+      id="projects"
+      className="section-paddingbg-linear-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900"
+    >
       <div className="container px-16 py-12 bg-secondary">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +81,7 @@ const Projects = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.slice(0, visibleProjects).map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
@@ -68,7 +101,9 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-700 mb-4 line-clamp-2">{project.description}</p>                
+                <p className="text-gray-700 mb-4 line-clamp-2">
+                  {project.description}
+                </p>
                 <div className="flex gap-4">
                   <a
                     href={project.liveUrl}
@@ -82,7 +117,7 @@ const Projects = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-outline flex items-center gap-2"
+                    className="btn btn-outline-secondary flex items-center gap-2"
                   >
                     GitHub <Github size={16} />
                   </a>
@@ -90,6 +125,25 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          {visibleProjects < projects.length && (
+            <button
+              onClick={showMoreProjects}
+              className="bg-primary text-white text-lg font-medium px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-200 shadow-lg mr-4 hover:bg-slate-50 hover:text-slate-900 hover:cursor-pointer"
+            >
+              Lihat Lainnya
+            </button>
+          )}
+          {visibleProjects > 3 && (
+            <button
+              onClick={() => setVisibleProjects(3)}
+              className="bg-gray-600 text-white text-lg font-medium px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-200 shadow-lg hover:bg-slate-50 hover:text-slate-900 hover:cursor-pointer"
+            >
+              Sembunyikan
+            </button>
+          )}
         </div>
       </div>
     </section>

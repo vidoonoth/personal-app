@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const menuItems = [
     { name: 'About', href: '#about' },
@@ -13,13 +15,35 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      setIsVisible(false);
+    } else {
+      // Scrolling up
+      setIsVisible(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <nav className="fixed w-full bg-blue-950/80 backdrop-blur-sm shadow-sm z-40">
+    <nav
+      className={`fixed top-0 w-full bg-blue-950/80 backdrop-blur-sm shadow-sm z-40 transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="container mx-auto px-16">
         <div className="flex justify-between items-center h-16">
           <motion.a
             href="#"
-            className="text-xl font-bold text-blue-600 dark:text-blue-400"
+            className="text-xl hover:cursor-pointer font-bold text-blue-600 dark:text-blue-400"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -33,18 +57,18 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                className="text-slate-50 hover:cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 {item.name}
               </a>
-            ))}           
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
+              className="text-slate-50 hover:cursor-pointer hover:text-blue-600 transition-colors duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -64,23 +88,12 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300"
+                  className="block px-3 py-2 text-salte-50 hover:text-blue-600 transition-colors duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <a
-                href="#"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsOpen(false);
-                  // Add your CV download logic here
-                }}
-              >
-                Download CV
-              </a>
             </div>
           </motion.div>
         )}

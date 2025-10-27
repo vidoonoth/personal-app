@@ -25,10 +25,35 @@ const certificatesData = [
     imageUrl: "/oop.png",
     link: "https://www.freecodecamp.org/certification/link-3",
   },
+  {
+    id: 4,
+    title: "React Dasar",
+    issuer: "Dicoding",
+    date: "Februari 2025",
+    imageUrl: "/react-dasar.png",
+    link: "https://www.dicoding.com/certificate/link-4",
+  },
+  {
+    id: 5,
+    title: "Node.js Lanjutan",
+    issuer: "Udemy",
+    date: "Maret 2025",
+    imageUrl: "/nodejs-lanjutan.png",
+    link: "https://www.udemy.com/certificate/link-5",
+  },
+  {
+    id: 6,
+    title: "Pengembangan Web dengan Laravel",
+    issuer: "Progate",
+    date: "April 2025",
+    imageUrl: "/laravel-web.png",
+    link: "https://www.progate.com/certificate/link-6",
+  },
 ];
 
 const Certificate = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [visibleCertificates, setVisibleCertificates] = useState(3); // Initially show 3 certificates
 
   const openImage = (image) => {
     setSelectedImage(image);
@@ -36,6 +61,10 @@ const Certificate = () => {
 
   const closeImage = () => {
     setSelectedImage(null);
+  };
+
+  const showMoreCertificates = () => {
+    setVisibleCertificates((prevCount) => prevCount + 3); // Show 3 more certificates
   };
 
   return (
@@ -53,7 +82,7 @@ const Certificate = () => {
 
         {/* Grid Certificate Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {certificatesData.map((cert) => (
+          {certificatesData.slice(0, visibleCertificates).map((cert) => (
             <div
               key={cert.id}
               className="rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300 ease-in-out group"
@@ -96,6 +125,25 @@ const Certificate = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          {visibleCertificates < certificatesData.length && (
+            <button
+              onClick={showMoreCertificates}
+              className="bg-secondary text-white text-lg font-medium px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-200 shadow-lg mr-4 hover:bg-slate-50 hover:text-slate-900 hover:cursor-pointer"
+            >
+              Lihat Lainnya
+            </button>
+          )}
+          {visibleCertificates > 3 && (
+            <button
+              onClick={() => setVisibleCertificates(3)}
+              className="bg-gray-600 text-white text-lg font-medium px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-200 shadow-lg hover:bg-slate-50 hover:text-slate-900 hover:cursor-pointer"
+            >
+              Sembunyikan
+            </button>
+          )}
         </div>
 
         {/* Modal fullscreen */}

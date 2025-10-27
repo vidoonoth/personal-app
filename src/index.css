@@ -20,6 +20,9 @@
   .btn-outline {
     @apply border border-white text-white font-semibold py-2 px-4 rounded-lg hover:bg-white hover:text-black transition;
   }
+  .btn-outline-secondary {
+    @apply border border-blue-900 text-slate-900 font-semibold py-2 px-4 rounded-lg hover:bg-slate-800 hover:text-slate-50 transition;
+  }
 }
 
 html {
@@ -50,11 +53,12 @@ body {
   min-height: 100vh;
 }
 
-a {
+a:not(.btn-outline-secondary) {
   font-weight: 500;
   color: white;
   text-decoration: inherit;
 }
+
 
 a:hover {
   color: #535bf2;
