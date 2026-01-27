@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     // Mempertahankan padding samping dan latar belakang
-    <section className="flex items-center px-16 py-8 bg-primary">
+    <section className="flex items-center px-6 pb-8 pt-16 lg:px-16 lg:py-8 bg-primary">
       {/* Menggunakan container untuk lebar maksimum yang terpusat */}
       <div className="container mx-auto"> 
         <motion.div
@@ -13,17 +13,16 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           {/* GUNAKAN GRID untuk tata letak 2 kolom di layar besar */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">            
             {/* KOLOM KIRI: Teks dan Tombol */}
             <div className="flex flex-col lg:order-1">
                 {/* Pembatas lebar hanya pada kolom teks agar tidak terlalu panjang */}
                 <div className="max-w-xl"> 
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+                    <p className="text-[32px] lg:text-6xl font-bold text-white mb-2 lg:mb-8">
                         Muhammad Alfin Tsabit
-                        <span className="block text-blue-400 mt-2">Web Developer</span>
-                    </h1>
-                  <p className="text-lg sm:text-xl text-gray-300 mb-8">
+                        <span className="block text-blue-400 lg:mt-2">Web Developer</span>
+                    </p>
+                  <p className="text-lg sm:text-xl text-gray-300 mb-6 lg:mb-8">
                         Passionate about creating beautiful and functional web experiences. 
                         I specialize in modern web technologies and love turning ideas into reality.
                     </p>

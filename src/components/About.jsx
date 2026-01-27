@@ -4,7 +4,7 @@ import { User } from "lucide-react";
 const About = () => {
   return (
     <section id="about" className="section-padding bg-secondary">
-      <div className="container px-16 py-12 mx-auto max-w-7xl">
+      <div className="container px-6 py-6 lg:px-16 lg:py-12 mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -15,9 +15,9 @@ const About = () => {
           {/* <div className="inline-block p-3 bg-blue-100 rounded-lg mb-6">
             <User size={24} className="text-blue-600" />
           </div> */}
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <p className="text-[32px] lg:text-4xl font-bold text-white mb-6">
             About Me
-          </h2>
+          </p>
           <div className="lg:hidden flex justify-center lg:justify-end lg:order-2 mt-8 mb-6 lg:mb-0 lg:mt-0">
                 <img
                     src="/alfin.png"

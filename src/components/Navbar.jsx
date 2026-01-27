@@ -35,11 +35,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`relative top-0 w-full bg-blue-950/80 backdrop-blur-sm shadow-sm z-40 transition-transform duration-300 ${
+      className={`fixed top-0 w-full bg-blue-950/80 backdrop-blur-sm shadow-sm z-40 transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="container mx-auto px-16">
+      <div className="container mx-auto px-6 lg:px-16">
         <div className="flex justify-between items-center h-16">
           <motion.a
             href="#"
