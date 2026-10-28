@@ -1,40 +1,37 @@
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
 
 const About = () => {
   return (
     <section id="about" className="section-padding bg-secondary">
-      <div className="container px-6 py-6 lg:px-16 lg:py-12 mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-7xl px-6 py-6 lg:px-16 lg:py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
+          className="mx-auto max-w-4xl text-center"
         >
-          {/* <div className="inline-block p-3 bg-blue-100 rounded-lg mb-6">
-            <User size={24} className="text-blue-600" />
-          </div> */}
-          <p className="text-[32px] lg:text-4xl font-bold text-white mb-6">
+          <p className="mb-6 text-[32px] font-bold text-white lg:text-4xl">
             About Me
           </p>
-          <div className="lg:hidden flex justify-center lg:justify-end lg:order-2 mt-8 mb-6 lg:mb-0 lg:mt-0">
-                <img
-                    src="/alfin.png"
-                    alt="Foto Alfin—profil"
-                    // Lebar gambar dibuat relatif terhadap kolom (misalnya 80%)
-                    // dan ukuran max agar gambar tidak pecah
-                    className="backdrop-blur-2xl bg-white/20 w-full max-w-xs md:max-w-sm lg:max-w-md rounded-4xl border border-white/40 object-cover shadow-2xl"
-                    loading="lazy"
-                    decoding="async"
-                />
-            </div>
-          <p className="text-lg text-white mb-8">
-            Hi! I'm Muhammad Alfin Tsabit, a Polytechnic student majoring in
-            Informatics Engineering, pursuing a Diploma in Informatics
-            Engineering. I have a strong interest in web development,
-            particularly in building Laravel-based applications as a Fullstack
-            Developer.
+
+          <div className="mt-8 mb-6 flex justify-center lg:hidden">
+            <img
+              src="/alfin.png"
+              alt="Alfin profile"
+              className="w-full max-w-xs rounded-4xl border border-white/40 bg-white/20 object-cover shadow-2xl backdrop-blur-2xl md:max-w-sm"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <p className="mb-8 text-lg text-white">
+            Hi! I'm Muhammad Alfin Tsabit, a fresh graduate of D3 Teknik
+            Informatika from Politeknik Negeri Indramayu with a strong interest
+            in software development and full-stack web development. I am used to
+            working across requirement analysis, system architecture,
+            implementation, and maintenance using React JS, Laravel, Python, and
+            PHP.
           </p>
         </motion.div>
       </div>

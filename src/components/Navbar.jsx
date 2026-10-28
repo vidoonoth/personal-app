@@ -9,6 +9,8 @@ const Navbar = () => {
 
   const menuItems = [
     { name: 'About', href: '#about' },
+    { name: 'Education', href: '#education' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Certificates', href: '#certificates' },
@@ -52,7 +54,7 @@ const Navbar = () => {
           </motion.a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-5 lg:space-x-8">
             {menuItems.map((item) => (
               <a
                 key={item.name}

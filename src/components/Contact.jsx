@@ -1,25 +1,37 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MessageCircle } from 'lucide-react';
+import { Linkedin, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 
 const Contact = () => {
   const contactMethods = [
     {
       name: 'Email',
-      value: 'alfinvidoo@gmail.com',
+      value: 'muhammadalfintsabit@gmail.com',
       icon: Mail,
-      href: 'mailto:your.email@example.com',
+      href: 'mailto:muhammadalfintsabit@gmail.com',
+    },
+    {
+      name: 'LinkedIn',
+      value: 'linkedin.com/in/muhammad-alfin-tsabit',
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/in/muhammad-alfin-tsabit/',
     },
     {
       name: 'WhatsApp',
-      value: '+6283842136035',
+      value: '085188384062',
       icon: MessageCircle,
-      href: 'https://wa.me/1234567890',
+      href: 'https://wa.me/6285188384062',
     },
     {
       name: 'Phone',
-      value: '+6283842136035',
+      value: '085188384062',
       icon: Phone,
-      href: 'tel:+1234567890',
+      href: 'tel:085188384062',
+    },
+    {
+      name: 'Location',
+      value: 'Indramayu, Jawa Barat',
+      icon: MapPin,
+      href: 'https://www.google.com/maps/search/?api=1&query=Indramayu%2C%20Jawa%20Barat',
     },
   ];
 
@@ -41,7 +53,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 mx-auto">
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
             return (
@@ -62,7 +74,9 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {method.name}
                 </h3>
-                <p className="text-gray-700 text-center">{method.value}</p>
+                <p className="w-full break-words text-center text-sm text-gray-700">
+                  {method.value}
+                </p>
               </motion.a>
             );
           })}
