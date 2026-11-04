@@ -3,26 +3,26 @@ import { ArrowUpRight, Mail, Sparkles, Terminal } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-[#030712] px-6 pt-24 pb-12 lg:px-12 lg:pt-28 lg:pb-0 xl:px-16">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-[#030712] px-6 py-16 lg:px-12 lg:py-16 xl:px-16">
       {/* Dynamic Deep Blue & Black Gradient Atmosphere */}
       {/* 1. Base Dark Midnight Tone */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#020617] via-[#040d21] to-[#020617] pointer-events-none" />
 
-      {/* 2. Core Radial Glow directly behind Alfin's silhouette - Matching reference composition */}
+      {/* 2. Core Radial Glow directly behind Alfin's silhouette - Darker, richer midnight navy glow */}
       <div
-        className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] sm:w-[700px] sm:h-[700px] lg:w-[850px] lg:h-[850px] rounded-full pointer-events-none blur-3xl opacity-95"
+        className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[750px] sm:h-[750px] lg:w-[950px] lg:h-[950px] rounded-full pointer-events-none blur-3xl opacity-90"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.65) 0%, rgba(14, 116, 144, 0.45) 30%, rgba(30, 58, 138, 0.25) 55%, transparent 75%)",
+            "radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.38) 0%, rgba(30, 58, 138, 0.28) 35%, rgba(15, 23, 42, 0.45) 60%, transparent 80%)",
         }}
       />
 
-      {/* 3. Intense Inner Spotlight behind the head */}
+      {/* 3. Subtle Inner Spotlight behind the head - Softened & darker */}
       <div
-        className="absolute top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] rounded-full pointer-events-none blur-2xl opacity-80"
+        className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] rounded-full pointer-events-none blur-2xl opacity-60"
         style={{
           background:
-            "radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(37, 99, 235, 0.2) 60%, transparent 100%)",
+            "radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(30, 58, 138, 0.15) 60%, transparent 100%)",
         }}
       />
 
@@ -46,13 +46,13 @@ const Hero = () => {
       {/* Content Grid */}
       <div className="container relative z-10 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-4 xl:gap-8">
-          
+
           {/* LEFT COLUMN: Punchy Bold Typography */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex flex-col justify-center lg:col-span-4 text-left z-20"
+            className="flex flex-col justify-center lg:self-center lg:-translate-y-16 xl:-translate-y-20 lg:col-span-4 text-left z-20"
           >
             {/* Top Greeting */}
             <p className="text-blue-300 font-medium text-lg sm:text-xl lg:text-2xl tracking-tight mb-2">
@@ -62,21 +62,10 @@ const Hero = () => {
             {/* Massive Bold Title - Exactly matching reference weight */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[66px] xl:text-[80px] font-black text-white tracking-tighter leading-[0.9] uppercase">
               Software<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400">
+              <span className="text-white bg-clip-text">
                 Developer
               </span>
             </h1>
-
-            {/* Name & Title Accent */}
-            <div className="mt-6 flex items-center gap-3">
-              <div className="h-0.5 w-10 bg-gradient-to-r from-blue-500 to-cyan-400" />
-              <p className="text-base sm:text-lg font-bold text-slate-100 tracking-wide">
-                Muhammad Alfin Tsabit
-              </p>
-            </div>
-            <p className="mt-1 text-xs sm:text-sm text-blue-300/70 font-medium pl-13">
-              Informatics Engineering • Full-Stack Web
-            </p>
           </motion.div>
 
           {/* CENTER COLUMN: Portrait Cutout with Blue Backlight */}
@@ -87,7 +76,7 @@ const Hero = () => {
             className="relative flex items-center justify-center lg:col-span-4 z-10"
           >
             {/* Ambient Backlight Halo directly centered on head/torso */}
-            <div className="absolute inset-0 -top-6 mx-auto w-[90%] h-[90%] rounded-full bg-blue-500/25 blur-3xl -z-10 pointer-events-none" />
+            <div className="absolute inset-0 -top-6 mx-auto w-[90%] h-[90%] rounded-full bg-blue-600/15 blur-3xl -z-10 pointer-events-none" />
 
             <div className="relative w-full max-w-[340px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px]">
               <img
@@ -107,15 +96,11 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
             className="flex flex-col justify-center lg:col-span-4 z-20 space-y-6 text-left lg:py-12"
           >
-            {/* Statement / Philosophy matching reference right side */}
+            {/* Name */}
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-[26px] xl:text-[30px] font-bold text-white tracking-tight leading-snug">
-                Great software should feel invisible & intuitive.
+              <h2 className="text-2xl sm:text-3xl lg:text-[28px] xl:text-[34px] font-bold text-white tracking-tight leading-snug">
+                Muhammad Alfin Tsabit
               </h2>
-              <p className="mt-2 text-xs sm:text-sm font-medium text-cyan-300/80 flex items-center gap-1.5">
-                <Terminal className="w-4 h-4 text-cyan-400 shrink-0" />
-                From architecture to clean code, built to scale.
-              </p>
             </div>
 
             {/* Description & Bio */}
