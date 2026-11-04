@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,6 +11,15 @@ import Footer from "./components/Footer";
 import Certificate from "./components/certificate";
 
 function App() {
+  useEffect(() => {
+    if (window.location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(window.location.hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    }
+  }, []);
+
   return (
     <div className="antialiased min-h-screen bg-primary">
       <Navbar />

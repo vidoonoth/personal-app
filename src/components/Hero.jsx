@@ -114,7 +114,7 @@ const Hero = () => {
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-blue-600 bg-white hover:bg-blue-500 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className="group inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-blue-900 bg-white hover:bg-blue-500 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 <span>View Projects</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
