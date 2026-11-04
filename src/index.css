@@ -35,18 +35,6 @@ html {
   font-weight: 400;
 }
 
-html::-webkit-scrollbar {
-  width: 30px;
-}
-html::-webkit-scrollbar-track {
-  background: #172554;
-}
-html::-webkit-scrollbar-thumb {
-  background-color: #f1f1f1;
-  border-radius: 6px;
-  border: 3px solid #1c2f6f;
-}
-
 body {
   margin: 0;
   min-width: 320px;

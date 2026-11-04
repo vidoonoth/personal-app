@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full bg-blue-950/80 backdrop-blur-sm shadow-sm z-40 transition-transform duration-300 ${
+      className={`fixed top-0 w-full bg-transparent backdrop-blur-md z-40 transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
@@ -80,7 +80,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <motion.div
-            className="md:hidden"
+            className="md:hidden bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10 mt-2 shadow-2xl overflow-hidden"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
