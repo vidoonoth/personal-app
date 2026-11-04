@@ -16,7 +16,7 @@ const Experience = () => {
       period: "2023 - 2024",
       summary:
         "Built a web-based system that allows library visitors to propose book titles that are not yet available in the library collection.",
-      stack: "Laravel",
+      stack: "PHP, Laravel",
     },
     {
       role: "Full-stack Developer",
@@ -36,7 +36,7 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mx-auto mb-12 max-w-3xl text-center"
+          className="mx-auto ml-12 mb-12 max-w-3xl text-left"
         >
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Experience
@@ -95,7 +95,7 @@ const Experience = () => {
               ))}
             </ul>
 
-            <p className="mt-6 rounded-xl border border-blue-800/30 bg-blue-950/40 px-4 py-3 text-sm font-medium text-blue-200">
+            <p className="mt-6 rounded-xl px-4 py-3 text-sm font-medium text-blue-200">
               Tech stack: PHP, Laravel
             </p>
           </motion.article>

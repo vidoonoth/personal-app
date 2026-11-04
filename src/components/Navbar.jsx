@@ -37,15 +37,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full bg-transparent backdrop-blur-md z-40 transition-transform duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
+      className={`fixed top-0 w-full bg-transparent backdrop-blur-md z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
     >
       <div className="container mx-auto px-6 lg:px-16">
         <div className="flex justify-between items-center h-16">
           <motion.a
             href="#"
-            className="text-xl hover:cursor-pointer font-bold text-blue-600"
+            className="text-xl hover:cursor-pointer font-bold text-white"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}

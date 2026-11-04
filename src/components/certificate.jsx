@@ -200,11 +200,11 @@ const Certificate = () => {
   return (
     <section id="certificates" className="section-padding bg-primary">
       <div className="container mx-auto max-w-7xl px-4 py-12">
-        <div className="mb-12 text-center">
+        <div className="ml-12 mb-12 text-left">
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Certificates
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-slate-300">
+          <p className="max-w-2xl text-lg text-slate-300">
             A collection of certificates that documents my learning journey in
             programming, data, and artificial intelligence.
           </p>
@@ -320,9 +320,8 @@ const Certificate = () => {
                     <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-950">
                       <img
                         src={selectedCertificate.images[activeImageIndex]}
-                        alt={`${selectedCertificate.title} page ${
-                          activeImageIndex + 1
-                        }`}
+                        alt={`${selectedCertificate.title} page ${activeImageIndex + 1
+                          }`}
                         className="h-full w-full object-contain"
                       />
 
@@ -355,18 +354,16 @@ const Certificate = () => {
                             type="button"
                             key={image}
                             onClick={() => setActiveImageIndex(index)}
-                            className={`aspect-[4/3] overflow-hidden rounded-lg border-2 bg-slate-950 p-1 transition ${
-                              activeImageIndex === index
+                            className={`aspect-[4/3] overflow-hidden rounded-lg border-2 bg-slate-950 p-1 transition ${activeImageIndex === index
                                 ? "border-blue-400"
                                 : "border-transparent opacity-70 hover:opacity-100"
-                            }`}
+                              }`}
                             aria-label={`View page ${index + 1}`}
                           >
                             <img
                               src={image}
-                              alt={`${selectedCertificate.title} thumbnail ${
-                                index + 1
-                              }`}
+                              alt={`${selectedCertificate.title} thumbnail ${index + 1
+                                }`}
                               className="h-full w-full object-contain"
                             />
                           </button>

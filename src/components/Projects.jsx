@@ -138,12 +138,12 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-left ml-12 mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Recent Projects
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl">
             Selected projects from my full-stack development work
           </p>
         </motion.div>
@@ -280,11 +280,10 @@ const Projects = () => {
                           type="button"
                           key={image}
                           onClick={() => setActiveImageIndex(index)}
-                          className={`relative aspect-video overflow-hidden rounded-lg border-2 transition ${
-                            activeImageIndex === index
-                              ? "border-blue-400"
-                              : "border-transparent opacity-70 hover:opacity-100"
-                          }`}
+                          className={`relative aspect-video overflow-hidden rounded-lg border-2 transition ${activeImageIndex === index
+                            ? "border-blue-400"
+                            : "border-transparent opacity-70 hover:opacity-100"
+                            }`}
                           aria-label={`View photo ${index + 1}`}
                         >
                           {renderProjectImage(selectedProject, image, "h-full w-full")}

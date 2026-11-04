@@ -38,12 +38,12 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mx-auto mb-12 max-w-3xl text-center"
+          className="mx-auto ml-12 mb-12 max-w-3xl text-left"
         >
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Technical Skills
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-slate-300">
+          <p className="max-w-2xl text-lg text-slate-300">
             A practical stack for building, maintaining, and improving
             full-stack web applications.
           </p>
