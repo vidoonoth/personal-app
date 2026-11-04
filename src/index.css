@@ -2,11 +2,11 @@
 
 @layer components {
   .bg-primary {
-    @apply bg-blue-950;
+    @apply bg-[#020617];
   }
 
   .bg-secondary {
-    @apply bg-blue-900;
+    @apply bg-[#050f26];
   }
 
   .btn-primary {

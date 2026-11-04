@@ -48,7 +48,7 @@ const Contact = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Get in Touch
           </h2>
-          <p className="text-lg text-white max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Feel free to reach out to me for collaborations or just a friendly chat
           </p>
         </motion.div>
@@ -66,15 +66,15 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="flex flex-col items-center p-6 bg-slate-900/60 rounded-2xl border border-slate-800/80 shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                  <Icon className="text-blue-600" size={24} />
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-4">
+                  <Icon className="text-blue-400" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {method.name}
                 </h3>
-                <p className="w-full break-words text-center text-sm text-gray-700">
+                <p className="w-full break-words text-center text-sm text-slate-400">
                   {method.value}
                 </p>
               </motion.a>

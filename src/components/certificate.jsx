@@ -204,7 +204,7 @@ const Certificate = () => {
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Certificates
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-white">
+          <p className="mx-auto max-w-2xl text-lg text-slate-300">
             A collection of certificates that documents my learning journey in
             programming, data, and artificial intelligence.
           </p>
@@ -214,12 +214,12 @@ const Certificate = () => {
           {certificatesData.slice(0, visibleCertificates).map((cert) => (
             <article
               key={cert.id}
-              className="group overflow-hidden rounded-lg bg-slate-50 shadow-2xl transition-transform duration-300 ease-in-out hover:scale-[1.03]"
+              className="group overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-xl backdrop-blur-sm transition-all duration-300 ease-in-out hover:border-blue-500/40 hover:-translate-y-1"
             >
               <button
                 type="button"
                 onClick={() => openCertificate(cert)}
-                className="relative block aspect-[4/3] w-full overflow-hidden bg-white p-3 hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="relative block aspect-[4/3] w-full overflow-hidden bg-slate-950/60 p-3 hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-500/40"
                 aria-label={`View certificate ${cert.title}`}
               >
                 <img
@@ -229,8 +229,8 @@ const Certificate = () => {
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-blue-950/75 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                  <span className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-blue-950 shadow-lg">
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-950/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 backdrop-blur-[2px]">
+                  <span className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/40">
                     <Images size={18} />
                     View Certificate
                   </span>
@@ -239,24 +239,24 @@ const Certificate = () => {
 
               <div className="p-6">
                 <div className="mb-4 flex items-start justify-between gap-3">
-                  <h3 className="line-clamp-2 text-xl font-semibold text-gray-900">
+                  <h3 className="line-clamp-2 text-xl font-bold text-white">
                     {cert.title}
                   </h3>
-                  <span className="shrink-0 rounded-md bg-blue-100 px-2 py-1 text-xs font-semibold text-blue-800">
+                  <span className="shrink-0 rounded-lg bg-blue-500/15 border border-blue-400/25 px-2.5 py-1 text-xs font-semibold text-blue-300">
                     {cert.images.length} pages
                   </span>
                 </div>
 
-                <p className="mb-2 flex items-center gap-2 text-sm text-gray-600">
-                  <Award size={16} className="text-blue-700" />
+                <p className="mb-2 flex items-center gap-2 text-sm text-slate-400">
+                  <Award size={16} className="text-blue-400" />
                   <span className="font-medium">{cert.issuer}</span>
                 </p>
-                <p className="mb-3 flex items-center gap-2 text-sm text-gray-600">
-                  <Calendar size={16} className="text-blue-700" />
+                <p className="mb-3 flex items-center gap-2 text-sm text-slate-400">
+                  <Calendar size={16} className="text-blue-400" />
                   {cert.date}
                 </p>
                 {cert.credentialId && (
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-slate-400">
                     ID: <span className="font-medium">{cert.credentialId}</span>
                   </p>
                 )}
@@ -270,7 +270,7 @@ const Certificate = () => {
             <button
               type="button"
               onClick={showMoreCertificates}
-              className="mr-4 rounded-lg bg-secondary px-8 py-3 text-lg font-medium text-white shadow-lg transition-colors duration-200 hover:bg-slate-50 hover:text-slate-900 hover:cursor-pointer"
+              className="mr-4 rounded-xl bg-blue-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-blue-600/30 transition duration-200 hover:bg-blue-500 hover:cursor-pointer"
             >
               Show More
             </button>
@@ -279,7 +279,7 @@ const Certificate = () => {
             <button
               type="button"
               onClick={() => setVisibleCertificates(3)}
-              className="rounded-lg bg-gray-600 px-8 py-3 text-lg font-medium text-white shadow-lg transition-colors duration-200 hover:bg-slate-50 hover:text-slate-900 hover:cursor-pointer"
+              className="rounded-xl bg-white/10 border border-white/15 px-8 py-3 text-base font-semibold text-white shadow-lg transition duration-200 hover:bg-white/20 hover:cursor-pointer"
             >
               Hide
             </button>
@@ -299,7 +299,7 @@ const Certificate = () => {
               aria-labelledby="certificate-modal-title"
             >
               <motion.div
-                className="relative max-h-[90vh] w-full max-w-6xl overflow-y-auto rounded-lg bg-white shadow-2xl"
+                className="relative max-h-[90vh] w-full max-w-6xl overflow-y-auto rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-2xl overflow-hidden"
                 initial={{ opacity: 0, y: 24, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -317,7 +317,7 @@ const Certificate = () => {
 
                 <div className="grid lg:grid-cols-[1.45fr_0.75fr]">
                   <div className="bg-slate-950 p-4 sm:p-6">
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-950">
                       <img
                         src={selectedCertificate.images[activeImageIndex]}
                         alt={`${selectedCertificate.title} page ${
@@ -331,7 +331,7 @@ const Certificate = () => {
                           <button
                             type="button"
                             onClick={showPreviousImage}
-                            className="absolute left-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg bg-white/90 text-blue-950 shadow-lg transition hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
+                            className="absolute left-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg bg-slate-800/80 border border-white/10 text-white shadow-lg transition hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300"
                             aria-label="Previous page"
                           >
                             <ChevronLeft size={22} />
@@ -339,7 +339,7 @@ const Certificate = () => {
                           <button
                             type="button"
                             onClick={showNextImage}
-                            className="absolute right-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg bg-white/90 text-blue-950 shadow-lg transition hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
+                            className="absolute right-3 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg bg-slate-800/80 border border-white/10 text-white shadow-lg transition hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300"
                             aria-label="Next page"
                           >
                             <ChevronRight size={22} />
@@ -355,7 +355,7 @@ const Certificate = () => {
                             type="button"
                             key={image}
                             onClick={() => setActiveImageIndex(index)}
-                            className={`aspect-[4/3] overflow-hidden rounded-lg border-2 bg-white p-1 transition ${
+                            className={`aspect-[4/3] overflow-hidden rounded-lg border-2 bg-slate-950 p-1 transition ${
                               activeImageIndex === index
                                 ? "border-blue-400"
                                 : "border-transparent opacity-70 hover:opacity-100"
@@ -376,41 +376,41 @@ const Certificate = () => {
                   </div>
 
                   <div className="p-6 sm:p-8">
-                    <p className="mb-3 text-sm font-semibold uppercase text-blue-700">
+                    <p className="mb-3 text-sm font-semibold uppercase text-blue-400">
                       Certificate Detail
                     </p>
                     <h3
                       id="certificate-modal-title"
-                      className="mb-5 text-2xl font-bold text-gray-950 sm:text-3xl"
+                      className="mb-5 text-2xl font-bold text-white sm:text-3xl"
                     >
                       {selectedCertificate.title}
                     </h3>
 
-                    <dl className="space-y-4 text-sm text-gray-700">
+                    <dl className="space-y-4 text-sm text-slate-300">
                       <div>
-                        <dt className="font-semibold text-gray-950">Issuer</dt>
+                        <dt className="font-semibold text-white">Issuer</dt>
                         <dd>{selectedCertificate.issuer}</dd>
                       </div>
                       <div>
-                        <dt className="font-semibold text-gray-950">Date</dt>
+                        <dt className="font-semibold text-white">Date</dt>
                         <dd>{selectedCertificate.date}</dd>
                       </div>
                       <div>
-                        <dt className="font-semibold text-gray-950">
+                        <dt className="font-semibold text-white">
                           Valid Until
                         </dt>
                         <dd>{selectedCertificate.validUntil}</dd>
                       </div>
                       {selectedCertificate.credentialId && (
                         <div>
-                          <dt className="font-semibold text-gray-950">
+                          <dt className="font-semibold text-white">
                             Credential ID
                           </dt>
                           <dd>{selectedCertificate.credentialId}</dd>
                         </div>
                       )}
                       <div>
-                        <dt className="font-semibold text-gray-950">Page</dt>
+                        <dt className="font-semibold text-white">Page</dt>
                         <dd>
                           {activeImageIndex + 1} of{" "}
                           {selectedCertificate.images.length}
@@ -423,7 +423,7 @@ const Certificate = () => {
                         href={selectedCertificate.verificationUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-8 inline-flex items-center gap-2 rounded-lg bg-blue-700 px-4 py-2 font-semibold text-white transition hover:bg-blue-900"
+                        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-500 px-5 py-2.5 font-semibold text-white shadow-lg shadow-blue-600/30 transition duration-200"
                       >
                         Verify Certificate
                         <ExternalLink size={16} />

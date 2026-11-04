@@ -17,7 +17,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-white py-4">
+    <footer className="bg-primary border-t border-slate-800/80 text-white py-8">
       <div className="container">
         <div className="flex flex-col items-center">
           <motion.div
@@ -50,7 +50,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-gray-300">
+            <p className="text-slate-400 text-sm">
               © {currentYear} Muhammad Alfin Tsabit. All rights reserved.
             </p>
           </motion.div>

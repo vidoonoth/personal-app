@@ -30,7 +30,7 @@ const Experience = () => {
 
   return (
     <section id="experience" className="section-padding bg-secondary">
-      <div className="container mx-auto max-w-7xl px-4 py-12">
+      <div className="container mx-auto max-w-7xl px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ const Experience = () => {
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Experience
           </h2>
-          <p className="text-lg text-gray-200">
+          <p className="text-lg text-slate-300">
             Internship and project experience in full-stack web development,
             system design, implementation, and maintenance.
           </p>
@@ -53,49 +53,49 @@ const Experience = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-lg bg-white p-6 shadow-lg"
+            className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40"
           >
             <div className="mb-5 flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-800">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
                 <BriefcaseBusiness size={24} />
               </div>
               <div>
-                <p className="mb-1 text-sm font-semibold text-blue-700">
+                <p className="mb-1 text-sm font-semibold text-blue-400">
                   Internship
                 </p>
-                <h3 className="text-2xl font-bold text-gray-950">
+                <h3 className="text-2xl font-bold text-white">
                   Full-stack Web Developer
                 </h3>
-                <p className="mt-1 font-semibold text-blue-900">
+                <p className="mt-1 font-semibold text-slate-300">
                   CV. Creative Gama Studio
                 </p>
               </div>
             </div>
 
-            <div className="mb-5 flex flex-wrap gap-3 text-sm text-gray-600">
+            <div className="mb-5 flex flex-wrap gap-3 text-sm text-slate-400">
               <span className="inline-flex items-center gap-2">
-                <MapPin size={16} className="text-blue-700" />
+                <MapPin size={16} className="text-blue-400" />
                 Yogyakarta
               </span>
               <span className="inline-flex items-center gap-2">
-                <Calendar size={16} className="text-blue-700" />
+                <Calendar size={16} className="text-blue-400" />
                 2025
               </span>
             </div>
 
             <ul className="space-y-3">
               {internshipTasks.map((task) => (
-                <li key={task} className="flex gap-3 text-gray-700">
+                <li key={task} className="flex gap-3 text-slate-300">
                   <CheckCircle2
                     size={18}
-                    className="mt-1 shrink-0 text-blue-700"
+                    className="mt-1 shrink-0 text-blue-400"
                   />
                   <span>{task}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="mt-6 rounded-lg bg-gray-50 px-4 py-3 text-sm font-medium text-gray-700">
+            <p className="mt-6 rounded-xl border border-blue-800/30 bg-blue-950/40 px-4 py-3 text-sm font-medium text-blue-200">
               Tech stack: PHP, Laravel
             </p>
           </motion.article>
@@ -108,21 +108,21 @@ const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="rounded-lg border border-white/15 bg-white/10 p-6 text-white shadow-lg backdrop-blur"
+                className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40"
               >
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                  <p className="text-sm font-semibold text-blue-200">
+                  <p className="text-sm font-semibold text-blue-400">
                     {project.role}
                   </p>
-                  <span className="rounded-md bg-white px-3 py-1 text-sm font-semibold text-blue-950">
+                  <span className="rounded-lg bg-blue-500/15 border border-blue-400/25 px-3 py-1 text-xs font-semibold text-blue-300 backdrop-blur-sm">
                     {project.period}
                   </span>
                 </div>
-                <h3 className="mb-3 text-xl font-semibold">{project.title}</h3>
-                <p className="mb-4 text-sm leading-6 text-gray-200">
+                <h3 className="mb-3 text-xl font-bold text-white">{project.title}</h3>
+                <p className="mb-4 text-sm leading-6 text-slate-300">
                   {project.summary}
                 </p>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-blue-200">
                   Tech stack: {project.stack}
                 </p>
               </motion.article>

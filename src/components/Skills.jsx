@@ -32,7 +32,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="section-padding bg-primary">
-      <div className="container mx-auto max-w-7xl px-4 py-12">
+      <div className="container mx-auto max-w-7xl px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ const Skills = () => {
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Technical Skills
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-200">
+          <p className="mx-auto max-w-2xl text-lg text-slate-300">
             A practical stack for building, maintaining, and improving
             full-stack web applications.
           </p>
@@ -60,13 +60,13 @@ const Skills = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="rounded-lg border border-white/10 bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-xl backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-blue-500/40"
               >
                 <div className="mb-5 flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-50 text-blue-800">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
                     <Icon size={22} />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-950">
+                  <h3 className="text-lg font-bold text-white">
                     {skill.category}
                   </h3>
                 </div>
@@ -75,7 +75,7 @@ const Skills = () => {
                   {skill.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700"
+                      className="rounded-lg border border-blue-800/40 bg-blue-950/60 px-3 py-1.5 text-xs font-medium text-blue-200 backdrop-blur-sm"
                     >
                       {item}
                     </span>

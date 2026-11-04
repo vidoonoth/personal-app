@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="section-padding bg-secondary">
-      <div className="container mx-auto max-w-7xl px-6 py-6 lg:px-16 lg:py-12">
+    <section id="about" className="section-padding bg-secondary relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl px-6 py-12 lg:px-16 lg:py-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,13 +19,13 @@ const About = () => {
             <img
               src="/alfin.png"
               alt="Alfin profile"
-              className="w-full max-w-xs rounded-4xl border border-white/40 bg-white/20 object-cover shadow-2xl backdrop-blur-2xl md:max-w-sm"
+              className="w-full max-w-xs rounded-4xl border border-white/20 bg-white/5 object-cover shadow-2xl backdrop-blur-2xl md:max-w-sm"
               loading="lazy"
               decoding="async"
             />
           </div>
 
-          <p className="mb-8 text-lg text-white">
+          <p className="mb-8 text-lg text-slate-300 leading-relaxed">
             Hi! I'm Muhammad Alfin Tsabit, a fresh graduate of D3 Teknik
             Informatika from Politeknik Negeri Indramayu with a strong interest
             in software development and full-stack web development. I am used to

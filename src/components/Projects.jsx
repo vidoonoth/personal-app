@@ -118,7 +118,7 @@ const Projects = () => {
   );
 
   const renderScrollableProjectImage = (project, image) => (
-    <div className="max-h-[62vh] overflow-auto rounded-lg bg-white lg:max-h-[72vh]">
+    <div className="max-h-[62vh] overflow-auto rounded-lg bg-slate-950 lg:max-h-[72vh]">
       <img
         src={image}
         alt={`${project.title} full preview`}
@@ -143,7 +143,7 @@ const Projects = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Recent Projects
           </h2>
-          <p className="text-lg text-white max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Selected projects from my full-stack development work
           </p>
         </motion.div>
@@ -156,34 +156,34 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="overflow-hidden rounded-lg bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
+              className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1"
             >
               <button
                 type="button"
                 onClick={() => openProject(project)}
-                className="group relative block h-48 w-full overflow-hidden bg-gray-200 text-left hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="group relative block h-48 w-full overflow-hidden bg-slate-950 text-left hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-500/40"
                 aria-label={`View details for ${project.title}`}
               >
                 {renderProjectImage(project, project.thumbnail, "h-full w-full")}
-                <div className="absolute inset-0 flex items-center justify-center bg-blue-950/75 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-blue-950 shadow-lg">
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-950/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 backdrop-blur-[2px]">
+                  <span className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/40">
                     <Eye size={18} />
                     View Details
                   </span>
                 </div>
               </button>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="mb-4 line-clamp-3 text-gray-700">
+                <p className="mb-4 line-clamp-3 text-sm text-slate-400 leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-800"
+                      className="rounded-lg border border-blue-800/40 bg-blue-950/60 px-2.5 py-1 text-xs font-medium text-blue-200 backdrop-blur-sm"
                     >
                       {tag}
                     </span>
@@ -198,7 +198,7 @@ const Projects = () => {
           {visibleProjects < projects.length && (
             <button
               onClick={showMoreProjects}
-              className="bg-primary text-white text-lg font-medium px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-200 shadow-lg mr-4 hover:bg-slate-50 hover:text-slate-900 hover:cursor-pointer"
+              className="bg-blue-600 hover:bg-blue-500 text-white text-base font-semibold px-8 py-3 rounded-xl transition duration-200 shadow-lg shadow-blue-600/30 mr-4 hover:cursor-pointer"
             >
               Show More
             </button>
@@ -206,7 +206,7 @@ const Projects = () => {
           {visibleProjects > 3 && (
             <button
               onClick={() => setVisibleProjects(3)}
-              className="bg-gray-600 text-white text-lg font-medium px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-200 shadow-lg hover:bg-slate-50 hover:text-slate-900 hover:cursor-pointer"
+              className="bg-white/10 hover:bg-white/20 border border-white/15 text-white text-base font-semibold px-8 py-3 rounded-xl transition duration-200 shadow-lg hover:cursor-pointer"
             >
               Hide
             </button>
@@ -227,7 +227,7 @@ const Projects = () => {
             aria-labelledby="project-modal-title"
           >
             <motion.div
-              className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-lg bg-white shadow-2xl"
+              className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-2xl overflow-hidden"
               initial={{ opacity: 0, y: 24, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -237,7 +237,7 @@ const Projects = () => {
               <button
                 type="button"
                 onClick={closeModal}
-                className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950/80 text-white transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/80 border border-white/10 text-white transition hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300"
                 aria-label="Close project details"
               >
                 <X size={20} />
@@ -295,29 +295,29 @@ const Projects = () => {
                 </div>
 
                 <div className="p-6 sm:p-8">
-                  <p className="mb-3 text-sm font-semibold uppercase text-blue-700">
+                  <p className="mb-3 text-sm font-semibold uppercase text-blue-400">
                     Project Detail
                   </p>
                   <h3
                     id="project-modal-title"
-                    className="mb-4 text-2xl font-bold text-gray-950 sm:text-3xl"
+                    className="mb-4 text-2xl font-bold text-white sm:text-3xl"
                   >
                     {selectedProject.title}
                   </h3>
-                  <p className="mb-5 text-base leading-7 text-gray-700">
+                  <p className="mb-5 text-base leading-7 text-slate-300">
                     {selectedProject.details}
                   </p>
                   <div className="mb-6 flex flex-wrap gap-2">
                     {selectedProject.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-800"
+                        className="rounded-lg border border-blue-800/40 bg-blue-950/60 px-2.5 py-1 text-xs font-medium text-blue-200 backdrop-blur-sm"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <p className="text-sm leading-6 text-gray-500">
+                  <p className="text-sm leading-6 text-slate-400">
                     Tall screenshots can be scrolled inside the preview panel.
                     Select a thumbnail or use the arrow buttons to browse more
                     project photos.
