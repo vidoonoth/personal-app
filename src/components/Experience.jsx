@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BriefcaseBusiness, Calendar, CheckCircle2, MapPin } from "lucide-react";
+import { CornerCrosshairs, AmbientGlow, IsometricCube } from "./TechShapes";
 
 const Experience = () => {
   const internshipTasks = [
@@ -29,15 +30,28 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="section-padding bg-secondary">
-      <div className="container mx-auto max-w-7xl px-4 py-16">
+    <section id="experience" className="section-padding bg-secondary relative overflow-hidden py-16">
+      {/* Ambient background lighting */}
+      <AmbientGlow color="indigo" position="top-right" />
+
+      {/* Floating 3D Geometric wireframe */}
+      <div className="absolute bottom-12 right-8 lg:right-20 z-0 pointer-events-none opacity-40">
+        <IsometricCube size={85} />
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-4 lg:px-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mx-auto ml-12 mb-12 max-w-3xl text-left"
+          className="mb-12 max-w-3xl text-left"
         >
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-cyan-300 mb-3 w-fit">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            TRACK RECORD & ROLES
+          </span>
+
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Experience
           </h2>
@@ -53,10 +67,13 @@ const Experience = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40"
+            className="relative rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)] group"
           >
+            {/* Tech corner crosshairs */}
+            <CornerCrosshairs />
+
             <div className="mb-5 flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 transition-colors duration-300 group-hover:border-cyan-400/40 group-hover:text-cyan-300 group-hover:bg-cyan-500/10">
                 <BriefcaseBusiness size={24} />
               </div>
               <div>
@@ -95,7 +112,7 @@ const Experience = () => {
               ))}
             </ul>
 
-            <p className="mt-6 rounded-xl px-4 py-3 text-sm font-medium text-blue-200">
+            <p className="mt-6 rounded-xl border border-blue-800/30 bg-blue-950/40 px-4 py-3 text-sm font-medium text-blue-200">
               Tech stack: PHP, Laravel
             </p>
           </motion.article>
@@ -108,8 +125,11 @@ const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40"
+                className="relative rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)] group"
               >
+                {/* Tech corner crosshairs */}
+                <CornerCrosshairs />
+
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                   <p className="text-sm font-semibold text-blue-400">
                     {project.role}

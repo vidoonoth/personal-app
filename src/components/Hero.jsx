@@ -1,14 +1,23 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, Sparkles, Terminal } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
+import { OrbitShape, IsometricCube } from "./TechShapes";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-end overflow-hidden bg-[#030712] px-6 pt-16 lg:px-12 lg:pt-20 xl:px-16 pb-0">
+    <section id="home" className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-end overflow-hidden bg-[#030712] px-6 pt-16 lg:px-12 lg:pt-20 xl:px-16 pb-0">
       {/* Dynamic Deep Blue & Black Gradient Atmosphere */}
       {/* 1. Base Dark Midnight Tone */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#020617] via-[#040d21] to-[#020617] pointer-events-none" />
 
-      {/* 2. Core Radial Glow directly behind Alfin's silhouette - Darker, richer midnight navy glow */}
+      {/* Floating 3D Geometric Illustrations */}
+      <div className="absolute top-24 right-8 lg:right-24 z-0 pointer-events-none opacity-60">
+        <IsometricCube size={100} />
+      </div>
+      <div className="absolute bottom-28 left-6 lg:left-16 z-0 pointer-events-none opacity-40">
+        <IsometricCube size={70} />
+      </div>
+
+      {/* 2. Core Radial Glow directly behind Alfin's silhouette */}
       <div
         className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[750px] sm:h-[750px] lg:w-[950px] lg:h-[950px] rounded-full pointer-events-none blur-3xl opacity-90"
         style={{
@@ -17,7 +26,7 @@ const Hero = () => {
         }}
       />
 
-      {/* 3. Subtle Inner Spotlight behind the head - Softened & darker */}
+      {/* 3. Subtle Inner Spotlight behind the head */}
       <div
         className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] rounded-full pointer-events-none blur-2xl opacity-60"
         style={{
@@ -54,6 +63,20 @@ const Hero = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="flex flex-col justify-center lg:self-center lg:col-span-4 text-left z-20 pb-8 lg:pb-16"
           >
+            {/* Live Availability Status */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-xs font-mono text-cyan-300 backdrop-blur-md mb-4 w-fit shadow-[0_0_15px_rgba(6,182,212,0.15)]"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span>AVAILABLE FOR WORK</span>
+            </motion.div>
+
             {/* Top Greeting */}
             <p className="text-blue-300 font-medium text-lg sm:text-xl lg:text-2xl tracking-tight mb-2">
               Hey, I'm a
@@ -68,13 +91,18 @@ const Hero = () => {
             </h1>
           </motion.div>
 
-          {/* CENTER COLUMN: Portrait Cutout sitting flush at the bottom */}
+          {/* CENTER COLUMN: Portrait Cutout with Rotating Cybernetic Orbit */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
             className="relative flex items-end justify-center lg:col-span-4 z-10 self-end leading-none"
           >
+            {/* Cybernetic rotating tech orbit directly centered behind head/torso */}
+            <div className="absolute top-[28%] left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none opacity-50">
+              <OrbitShape className="w-[300px] h-[300px] sm:w-[380px] sm:h-[380px]" />
+            </div>
+
             {/* Ambient Backlight Halo directly centered on head/torso */}
             <div className="absolute inset-0 -top-6 mx-auto w-[90%] h-[90%] rounded-full bg-blue-600/15 blur-3xl -z-10 pointer-events-none" />
 

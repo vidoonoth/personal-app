@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Eye, X } from "lucide-react";
+import { CornerCrosshairs, AmbientGlow, IsometricCube } from "./TechShapes";
 
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
@@ -82,9 +83,13 @@ const Projects = () => {
     if (!selectedProject) return;
 
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") closeModal();
-      if (event.key === "ArrowLeft") showPreviousImage();
-      if (event.key === "ArrowRight") showNextImage();
+      if (event.key === "Escape") {
+        closeModal();
+      } else if (event.key === "ArrowLeft") {
+        showPreviousImage();
+      } else if (event.key === "ArrowRight") {
+        showNextImage();
+      }
     };
 
     document.body.style.overflow = "hidden";
@@ -96,25 +101,14 @@ const Projects = () => {
     };
   }, [selectedProject]);
 
-  const renderProjectImage = (project, image, className = "") => (
-    <div className={`relative overflow-hidden bg-slate-900 ${className}`}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-blue-950 via-slate-800 to-sky-700 px-6 text-center text-white">
-        <span className="text-sm font-semibold uppercase text-blue-200">
-          Project Preview
-        </span>
-        <span className="text-2xl font-bold">{project.title}</span>
-      </div>
-      <img
-        src={image}
-        alt={`${project.title} preview`}
-        className="absolute inset-0 h-full w-full object-cover"
-        loading="lazy"
-        decoding="async"
-        onError={(event) => {
-          event.currentTarget.classList.add("hidden");
-        }}
-      />
-    </div>
+  const renderProjectImage = (project, image, className) => (
+    <img
+      src={image}
+      alt={`${project.title} screenshot`}
+      className={`${className} object-cover object-top transition duration-500 group-hover:scale-105`}
+      loading="lazy"
+      decoding="async"
+    />
   );
 
   const renderScrollableProjectImage = (project, image) => (
@@ -122,7 +116,7 @@ const Projects = () => {
       <img
         src={image}
         alt={`${project.title} full preview`}
-        className="h-auto w-full"
+        className="w-full object-contain"
       />
     </div>
   );
@@ -130,16 +124,29 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="section-padding bg-secondary"
+      className="section-padding bg-secondary relative overflow-hidden py-16"
     >
-      <div className="container mx-auto px-4 py-12 max-w-7xl">
+      {/* Ambient background lighting */}
+      <AmbientGlow color="cyan" position="top-left" />
+
+      {/* Floating 3D Geometric wireframe */}
+      <div className="absolute top-12 right-12 z-0 pointer-events-none opacity-40">
+        <IsometricCube size={95} />
+      </div>
+
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-left ml-12 mb-12"
+          className="text-left mb-12"
         >
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-cyan-300 mb-3 w-fit">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            PORTFOLIO SHOWCASE
+          </span>
+
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Recent Projects
           </h2>
@@ -156,8 +163,11 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1"
+              className="relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 shadow-xl backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)] hover:-translate-y-1 group"
             >
+              {/* Tech corner crosshairs */}
+              <CornerCrosshairs />
+
               <button
                 type="button"
                 onClick={() => openProject(project)}
@@ -183,7 +193,7 @@ const Projects = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-lg border border-blue-800/40 bg-blue-950/60 px-2.5 py-1 text-xs font-medium text-blue-200 backdrop-blur-sm"
+                      className="rounded-lg border border-blue-800/40 bg-blue-950/60 px-2.5 py-1 text-xs font-medium text-blue-200 backdrop-blur-sm transition-colors duration-200 hover:border-cyan-400/50 hover:text-cyan-200"
                     >
                       {tag}
                     </span>
@@ -227,7 +237,7 @@ const Projects = () => {
             aria-labelledby="project-modal-title"
           >
             <motion.div
-              className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-2xl overflow-hidden"
+              className="relative max-h-[90vh] w-full max-w-6xl overflow-y-auto rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-2xl overflow-hidden"
               initial={{ opacity: 0, y: 24, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -243,16 +253,16 @@ const Projects = () => {
                 <X size={20} />
               </button>
 
-              <div className="grid gap-0 lg:grid-cols-[1.4fr_1fr]">
+              <div className="grid lg:grid-cols-[1.45fr_0.75fr]">
                 <div className="bg-slate-950 p-4 sm:p-6">
-                  <div className="relative">
-                    {renderScrollableProjectImage(
-                      selectedProject,
-                      selectedProject.images[activeImageIndex]
-                    )}
+                  {renderScrollableProjectImage(
+                    selectedProject,
+                    selectedProject.images[activeImageIndex]
+                  )}
 
-                    {selectedProject.images.length > 1 && (
-                      <>
+                  {selectedProject.images.length > 1 && (
+                    <div className="relative mt-4">
+                      {activeImageIndex > 0 && (
                         <button
                           type="button"
                           onClick={showPreviousImage}
@@ -261,6 +271,9 @@ const Projects = () => {
                         >
                           <ChevronLeft size={22} />
                         </button>
+                      )}
+
+                      {activeImageIndex < selectedProject.images.length - 1 && (
                         <button
                           type="button"
                           onClick={showNextImage}
@@ -269,21 +282,22 @@ const Projects = () => {
                         >
                           <ChevronRight size={22} />
                         </button>
-                      </>
-                    )}
-                  </div>
+                      )}
+                    </div>
+                  )}
 
                   {selectedProject.images.length > 1 && (
-                    <div className="mt-4 grid grid-cols-3 gap-3">
+                    <div className="mt-4 grid grid-cols-4 gap-3">
                       {selectedProject.images.map((image, index) => (
                         <button
                           type="button"
                           key={image}
                           onClick={() => setActiveImageIndex(index)}
-                          className={`relative aspect-video overflow-hidden rounded-lg border-2 transition ${activeImageIndex === index
-                            ? "border-blue-400"
-                            : "border-transparent opacity-70 hover:opacity-100"
-                            }`}
+                          className={`relative aspect-video overflow-hidden rounded-lg border-2 transition ${
+                            activeImageIndex === index
+                              ? "border-blue-400"
+                              : "border-transparent opacity-70 hover:opacity-100"
+                          }`}
                           aria-label={`View photo ${index + 1}`}
                         >
                           {renderProjectImage(selectedProject, image, "h-full w-full")}
