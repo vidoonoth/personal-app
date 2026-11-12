@@ -14,15 +14,15 @@ const About = () => {
       </div>
 
       <div className="container mx-auto max-w-7xl px-6 lg:px-16 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 items-end gap-8 lg:grid-cols-12 lg:gap-12"
-        >
-          {/* Left: Text (All Left-Aligned) */}
-          <div className="text-left lg:col-span-7 pb-8 lg:pb-30">
+        <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-12 lg:gap-12">
+          {/* Left: Text (All Left-Aligned, Vertically Centered on Desktop) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-left lg:col-span-7 lg:self-center pb-2 lg:pb-0"
+          >
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-cyan-300 mb-3 w-fit">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               BIOGRAPHY & BACKGROUND
@@ -40,10 +40,16 @@ const About = () => {
               implementation, and maintenance using JavaScript, Python, and
               PHP.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Right: Image alfin3.png with Cybernetic Orbit */}
-          <div className="flex justify-center lg:justify-end lg:col-span-5 self-end">
+          {/* Right: Image alfin_almet.png with Cybernetic Orbit */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="flex justify-center lg:justify-end lg:col-span-5 self-end origin-bottom"
+          >
             <div className="relative flex justify-center items-end leading-none">
               {/* Cybernetic rotating tech orbit behind Alfin */}
               <div className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none opacity-50">
@@ -54,13 +60,13 @@ const About = () => {
               <div className="absolute inset-x-0 bottom-6 h-3/4 rounded-full bg-blue-600/15 blur-2xl pointer-events-none" />
 
               <img
-                src="/alfin3.png"
+                src="/alfin_almet.png"
                 alt="Muhammad Alfin Tsabit"
                 className="relative z-10 block h-[260px] sm:h-[300px] md:h-[330px] lg:h-[460px] w-auto max-w-full object-contain object-bottom align-bottom drop-shadow-[0_10px_25px_rgba(2,6,23,0.7)]"
               />
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
